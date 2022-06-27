@@ -1,6 +1,7 @@
 package com.domain.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -22,7 +23,12 @@ public class ProductService {
     }
 
     public Product findOne(Long id){
-        return productRepo.findById(id).get();
+        Optional<Product> product = productRepo.findById(id);
+        if (!product.isPresent()){
+            return null;
+        }
+        // return productRepo.findById(id).get();
+         return product.get();
     }
 
     public Iterable<Product> findAll(){

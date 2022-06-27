@@ -56,7 +56,7 @@ public class Product implements Serializable {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.description = description; 
     }
 
     public double getPrice() {
