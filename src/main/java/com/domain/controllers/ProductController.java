@@ -74,6 +74,4 @@ public class ProductController {
         productService.removeOne(id);
     }
 
-   
-
 }
