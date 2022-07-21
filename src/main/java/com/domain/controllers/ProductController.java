@@ -26,7 +26,6 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-
     @PostMapping
     public ResponseEntity<ResponseData<Product>> update(@Valid @RequestBody Product product, Errors errors){
         ResponseData<Product> responseData = new ResponseData<>();

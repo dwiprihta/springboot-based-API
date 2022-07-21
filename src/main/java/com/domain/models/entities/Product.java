@@ -19,6 +19,7 @@ import javax.validation.constraints.NotEmpty;
 @Table(name = "tbl_product")
 public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
@@ -33,12 +34,13 @@ public class Product implements Serializable {
 
     private double price;
 
+    // RELATIONS TABLE
     @ManyToOne
     private Category category;
 
     @ManyToMany
     @JoinTable(name = "tbl_product_supplier",joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name="supplier_id"))
-    
+
     private Set<Supplier> suppliers;
 
     // public Product() {
